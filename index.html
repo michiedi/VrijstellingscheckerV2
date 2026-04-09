@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vrijstellingschecker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <p class="eyebrow">Vlaanderen · Omgevingsvergunning</p>
+      <h1>Vrijstellingschecker</h1>
+      <p class="lead">
+        Een werkende, data-gedreven checker voor het <strong>Vrijstellingsbesluit</strong>.
+        De tool geeft een <em>indicatie</em>: <strong>vrijgesteld</strong>, <strong>niet vrijgesteld</strong> of <strong>manuele check nodig</strong>.
+      </p>
+      <div class="warning">
+        <strong>Belangrijk:</strong> dit is geen juridisch bindend advies. Lokale verordeningen,
+        erfgoedregels, RUP/BPA, voorwaarden uit bestaande vergunningen en andere regelgeving kunnen
+        een vrijstelling uitsluiten.
+      </div>
+    </div>
+  </header>
+
+  <main class="container layout">
+    <aside class="sidebar card">
+      <label for="scenarioSelect" class="label">Scenario</label>
+      <select id="scenarioSelect"></select>
+      <div id="scenarioMeta" class="meta"></div>
+      <hr />
+      <div class="small muted">
+        Tip: start met een concrete handeling, bv. <em>bijgebouw bij woning</em>,
+        <em>zonnepanelen</em> of <em>afbraak</em>.
+      </div>
+    </aside>
+
+    <section class="card mainpanel">
+      <form id="checkerForm"></form>
+      <div class="actions">
+        <button id="evaluateBtn" type="button">Check vrijstelling</button>
+        <button id="resetBtn" type="button" class="secondary">Reset</button>
+      </div>
+      <section id="result" class="result hidden"></section>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <p>
+      Gemaakt als GitHub Pages-vriendelijke repo (pure HTML/CSS/JS). Beslissingslogica zit in
+      <code>data/rules.js</code> en is uitbreidbaar.
+    </p>
+  </footer>
+
+  <script src="data/rules.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
